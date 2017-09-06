@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--导入属性配置 -->
+    <!--<properties resource="generator.properties"/>-->
+    <!--指定数据库驱动位置-->
+    <classPathEntry location="C:\\Users\\zhenghuasheng\\.IntelliJIdea2016.1\\config\\jdbc-drivers\\mysql-connector-java-5.1.35-bin.jar"/>
+
+    <context id="default" targetRuntime="MyBatis3" >
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <commentGenerator>
+            <property name="suppressDate" value="false"/>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+
+        <!--数据库连接驱动class、url、password、userId-->
+        <jdbcConnection
+                driverClass="com.mysql.jdbc.Driver"
+                connectionURL="jdbc:mysql://localhost:3306/db_shiro"
+                password=""
+                userId="root">
+        </jdbcConnection>
+
+        <!--数据库类型与java类型转换-->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="true"/>
+        </javaTypeResolver>
+
+        <!-- 生成模型的包名和位置-->
+        <javaModelGenerator targetPackage="com.shiro.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- 生成映射文件的包名和位置-->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- 生成DAO的包名和位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.shiro.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table schema="test" tableName="t_permission" domainObjectName="Permission">
+            <property name="useActualColumnNames" value="false"/>
+            <generatedKey column="codeid" sqlStatement="MySql"/>
+                      <columnRenamingRule searchString="^_" replaceString="" />
+                      <columnOverride column="mobilenumber" property="phone"/>
+
+            <!--<columnOverride column="" javaType=""/>-->
+        </table>
+
+    </context>
+</generatorConfiguration>        

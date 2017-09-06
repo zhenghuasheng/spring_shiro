@@ -1,0 +1,12 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<body>
+<div shiro:hasRole="admin">
+    我是admin
+</div>
+<a href="${pageContext.request.contextPath }/user/logout">退出</a>
+    <a href="/user/admin">user-admin</a>
+
+</body>
+</html>
