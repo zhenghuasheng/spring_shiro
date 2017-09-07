@@ -6,6 +6,7 @@ E:\BaiduYunDownload\workspace\spring-shiro\src\main\java\com\shiro\model\Permiss
 E:\BaiduYunDownload\workspace\spring-shiro\src\main\java\com\shiro\mapper\RoleMapper.java
 E:\BaiduYunDownload\workspace\spring-shiro\src\main\java\com\shiro\mapper\UserMapper.java
 E:\BaiduYunDownload\workspace\spring-shiro\src\main\java\com\shiro\model\UserExample.java
+E:\BaiduYunDownload\workspace\spring-shiro\src\main\java\com\shiro\token\ShiroToken.java
 E:\BaiduYunDownload\workspace\spring-shiro\src\main\java\com\shiro\service\UserService.java
 E:\BaiduYunDownload\workspace\spring-shiro\src\main\java\com\shiro\model\Role.java
 E:\BaiduYunDownload\workspace\spring-shiro\src\main\java\com\shiro\mapper\PermissionMapper.java

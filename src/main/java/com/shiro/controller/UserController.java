@@ -18,10 +18,13 @@ public class UserController {
 
     //用户登录
     @RequestMapping("/login")
-    public String login(User user, HttpServletRequest request) {
+    public String login(User user, Boolean rememberMe,HttpServletRequest request) {
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user.getPassword());
         try{
+            if (rememberMe != null && rememberMe) {
+                token.setRememberMe(true);
+            }
             subject.login(token);//会跳到我们自定义的realm中
             request.getSession().setAttribute("user", user);
             return "success";

@@ -1,3 +1,4 @@
+com\shiro\token\ShiroToken.class
 com\shiro\model\RoleExample$Criteria.class
 com\shiro\model\PermissionExample.class
 com\shiro\model\RoleExample.class
@@ -17,5 +18,6 @@ com\shiro\model\PermissionExample$Criteria.class
 com\shiro\model\RoleExample$Criterion.class
 com\shiro\model\PermissionExample$GeneratedCriteria.class
 com\shiro\mapper\PermissionMapper.class
+com\shiro\controller\AdminController.class
 com\shiro\model\UserExample$Criteria.class
 com\shiro\model\Permission.class

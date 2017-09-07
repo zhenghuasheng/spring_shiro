@@ -28,7 +28,8 @@ public class AuthRealm extends AuthorizingRealm {
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        String username = (String) principalCollection.getPrimaryPrincipal();
+        User user = (User) principalCollection.getPrimaryPrincipal();
+        String username = user.getUsername();
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
 
         authorizationInfo.setRoles(userService.getRoles(username));
@@ -39,12 +40,12 @@ public class AuthRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         String username = (String) token.getPrincipal(); // 获取用户名
-
         User user = userService.getByUserName(username);
         if (user == null) {
+            logger.info("user info is null");
             return null;
         }
-        return new SimpleAuthenticationInfo(user.getUsername(), user.getPassword(), this.getName());
+        return new SimpleAuthenticationInfo(user, user.getPassword(), this.getName());
     }
 
     /**

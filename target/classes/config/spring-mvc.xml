@@ -34,8 +34,8 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
 
-    <!-- 静态文件标示  -->
-    <!--<mvc:resources location="" mapping="/resources/**"/>-->
+     <!--静态文件标示  -->
+    <mvc:resources location="/" mapping="/**"/>
 
     <!--<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">-->
     <!--<property name="converters" >-->
@@ -76,7 +76,4 @@
         <property name="characterEncoding" value="UTF-8"/>
         <property name="order" value="1"/>
     </bean>
-
-
-
 </beans> 
