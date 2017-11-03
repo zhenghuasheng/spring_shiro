@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class AdminController {
 
+
     @RequestMapping("/find/user")
     @ResponseBody
     public Object getUser() {

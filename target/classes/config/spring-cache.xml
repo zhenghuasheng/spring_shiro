@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c" xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+
+    <cache:annotation-driven cache-manager="cacheManager" proxy-target-class="true"/>
+    <bean id="cacheManager" class="org.springframework.data.redis.cache.RedisCacheManager" c:redisOperations-ref="redisTemplate">
+        <property name="defaultExpiration" value="600"/>
+        <property name="usePrefix" value="true"/>
+        <property name="cacheNames">
+            <set>
+                <value>default</value>
+                <value>commonCache</value>
+            </set>
+        </property>
+        <property name="expires">
+            <map key-type="java.lang.String" value-type="java.lang.Long">
+                <entry key="halfHour" value="1800"/>
+                <entry key="hour" value="3600"/>
+                <entry key="oneDay" value="86400"/>
+                <!-- shiro cache keys -->
+                <entry key="authorizationCache" value="1800"/>
+                <entry key="authenticationCache" value="1800"/>
+                <entry key="activeSessionCache" value="1800"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxIdle" value="${redis.maxIdle}"/>
+        <property name="maxTotal" value="${redis.maxActive}"/>
+        <property name="maxWaitMillis" value="${redis.maxWait}"/>
+        <property name="testOnBorrow" value="${redis.testOnBorrow}"/>
+    </bean>
+
+    <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+          p:hostName="${redis.host}" p:port="${redis.port}" p:password="${redis.pass}" p:poolConfig-ref="poolConfig"/>
+
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+        <property name="connectionFactory" ref="connectionFactory"/>
+    </bean>
+</beans>
