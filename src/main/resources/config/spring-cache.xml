@@ -37,11 +37,11 @@
     </bean>
 
     <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" p:hostName="${redis.host}" p:port="${redis.port}" p:password="${redis.pass}" p:poolConfig-ref="poolConfig"/>
-
     <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
         <property name="connectionFactory" ref="connectionFactory"/>
     </bean>
 
     <!--jedis client-->
-    <bean id="jedisPool" class="redis.clients.jedis.JedisPool" c:_0-ref="poolConfig" c:_1="${redis.host}" c:_2="${redis.port}" c:_3="5000" c:_4="5000" c:_5="${redis.pass}" c:_6="1"/>
+    <bean id="jedisPool" class="redis.clients.jedis.JedisPool" c:_0-ref="poolConfig" c:_1="${redis.host}" c:_2="${redis.port}" c:_3="5000"  c:_4="${redis.pass}">
+    </bean>
 </beans>

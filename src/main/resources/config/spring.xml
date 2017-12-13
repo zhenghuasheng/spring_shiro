@@ -12,6 +12,10 @@ http://www.springframework.org/schema/context
     <context:annotation-config/>
     <context:property-placeholder location="classpath:config/jdbc.properties,classpath:config/redis.properties"/>
 
+
+
+
+
     <import resource="spring-shiro.xml"/>
     <import resource="spring-cache.xml"/>
     <!-- 自动扫描，注入 -->

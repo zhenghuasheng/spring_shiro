@@ -35,19 +35,19 @@
     </mvc:annotation-driven>
 
      <!--静态文件标示  -->
-    <mvc:resources location="/" mapping="/**"/>
+    <mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/"/>
+    <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"/>
 
     <!--<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">-->
-    <!--<property name="converters" >-->
-    <!--<set>-->
-    <!--<ref bean="stringToListConverter"/>-->
-    <!--</set>-->
-    <!--</property>-->
+        <!--<property name="converters" >-->
+            <!--<set>-->
+                <!--<ref bean="stringToListConverter"/>-->
+            <!--</set>-->
+        <!--</property>-->
     <!--</bean>-->
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/" p:suffix=".jsp" p:cache="true" p:order="2"/>
-
 
 
     <!--thymeleaf 模板解析-->

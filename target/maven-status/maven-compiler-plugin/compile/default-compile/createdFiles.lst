@@ -4,6 +4,7 @@ com\shiro\model\RoleExample$Criteria.class
 com\shiro\model\PermissionExample.class
 com\shiro\model\RoleExample.class
 com\shiro\config\redis\ShiroSessionRepository.class
+com\shiro\config\redis\Jedis\JedisManager.class
 com\shiro\model\UserExample$GeneratedCriteria.class
 com\shiro\model\PermissionExample$Criterion.class
 com\shiro\service\AuthRealm.class
@@ -18,8 +19,10 @@ com\shiro\config\redis\RedisShiroSessionRepository.class
 com\shiro\model\UserExample.class
 com\shiro\model\Role.class
 com\shiro\service\UserService.class
+com\shiro\common\SerializeUtil.class
 com\shiro\model\PermissionExample$Criteria.class
 com\shiro\model\RoleExample$Criterion.class
+com\shiro\config\swagger2\Swagger2Config.class
 com\shiro\model\PermissionExample$GeneratedCriteria.class
 com\shiro\mapper\PermissionMapper.class
 com\shiro\controller\AdminController.class
