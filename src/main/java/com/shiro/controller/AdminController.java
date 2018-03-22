@@ -17,4 +17,7 @@ public class AdminController {
     public Object getUser() {
         return SecurityUtils.getSubject().getPrincipal();
     }
+
+
+
 }

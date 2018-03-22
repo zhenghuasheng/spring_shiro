@@ -234,6 +234,7 @@
                 <version>2.8</version>
                 <configuration>
                     <outputDirectory>${project.build.directory}/libs</outputDirectory>
+
                     <overWriteReleases>false</overWriteReleases>
                     <overWriteSnapshots>false</overWriteSnapshots>
                     <overWriteIfNewer>true</overWriteIfNewer>
