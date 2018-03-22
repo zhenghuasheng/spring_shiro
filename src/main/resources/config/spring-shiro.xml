@@ -11,6 +11,7 @@ http://www.springframework.org/schema/context
 
 
     <bean id="authRealm" class="com.shiro.service.AuthRealm"/>
+
     <!-- 安全管理器 -->
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realm" ref="authRealm"/>
@@ -68,12 +69,6 @@ http://www.springframework.org/schema/context
     </bean>
 
 
-
-
-
-
-
-
     <!-- 配置需要向Cookie中保存数据的配置模版 -->
     <bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
         <!-- 在Tomcat运行下默认使用的Cookie的名字为JSESSIONID -->
@@ -109,6 +104,11 @@ http://www.springframework.org/schema/context
         <property name="sessionIdCookie" ref="sessionIdCookie"/>
         <!-- 定义sessionIdCookie模版可以进行操作的启用 -->
         <property name="sessionIdCookieEnabled" value="true"/>
+        <property name="sessionListeners">
+            <list>
+                <bean class="com.shiro.config.shiro.ShiroSessionListener"/>
+            </list>
+        </property>
     </bean>
 
 

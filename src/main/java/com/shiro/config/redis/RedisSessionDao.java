@@ -46,6 +46,6 @@ public class RedisSessionDao extends AbstractSessionDAO {
 
     @Override
     public Collection<Session> getActiveSessions() {
-       return null;
+       return shiroSessionRepository.getAllSessions();
     }
 }

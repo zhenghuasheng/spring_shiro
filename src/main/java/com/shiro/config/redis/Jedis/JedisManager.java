@@ -81,7 +81,7 @@ public class JedisManager {
             if (byteKeys != null && byteKeys.size() > 0) {  
                 for (byte[] bs : byteKeys) {  
                 	Session obj = SerializeUtil.deserialize(jedis.get(bs), Session.class);
-                     if(obj instanceof Session){
+                     if(obj != null){
                     	 sessions.add(obj);  
                      }
                 }  

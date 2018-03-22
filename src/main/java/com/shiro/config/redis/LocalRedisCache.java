@@ -129,9 +129,7 @@ public class LocalRedisCache implements Cache {
             obj = ois.readObject();
             ois.close();
             bis.close();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } catch (ClassNotFoundException ex) {
+        } catch (IOException | ClassNotFoundException ex) {
             ex.printStackTrace();
         }
         return obj;

@@ -17,7 +17,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- * Created by zhenghuasheng on 2017/9/5.17:25
+ *
+ * @author zhenghuasheng
+ * @date 2017/9/5
  */
 
 public class AuthRealm extends AuthorizingRealm {
