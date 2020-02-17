@@ -25,7 +25,8 @@ public class UserController {
             if (rememberMe != null && rememberMe) {
                 token.setRememberMe(true);
             }
-            subject.login(token);//会跳到我们自定义的realm中
+            //会跳到我们自定义的realm中
+            subject.login(token);
             request.getSession().setAttribute("user", user);
             return "success";
         }catch(Exception e){
