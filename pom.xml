@@ -10,7 +10,7 @@
 
     <properties>
         <mybatis.version>3.3.0</mybatis.version>
-        <spring.version>4.3.10.RELEASE</spring.version>
+        <spring.version>5.2.20.RELEASE</spring.version>
         <servlet.api.version>3.0-alpha-1</servlet.api.version>
         <mybatis.spring.version>1.3.1</mybatis.spring.version>
         <mysql.version>5.1.35</mysql.version>
